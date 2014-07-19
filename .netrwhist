@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/lyndon/Public/symfony2.localhost/vendor/sonata-project/core-bundle'
+let g:netrw_dirhist_2='/home/lyndon/Public/symfony2.localhost/vendor/sonata-project/core-bundle/Model'
+let g:netrw_dirhist_3='/home/lyndon/Public/symfony2.localhost/vendor/sonata-project/core-bundle'
+let g:netrw_dirhist_4='/home/lyndon/Public/symfony2.localhost/vendor/sonata-project/core-bundle/Model'
+let g:netrw_dirhist_5='/home/lyndon/Public/symfony2.localhost/vendor/sonata-project/core-bundle/Model/Adapter'
+let g:netrw_dirhist_6='/home/lyndon/Public/symfony2.localhost/src/Lfc/VoucherBundle'
+let g:netrw_dirhist_7='/home/lyndon/Public/symfony2.localhost/src/Lfc/VoucherBundle/Admin'
+let g:netrw_dirhist_8='/home/lyndon/Public/newsite.localhost/src/Lfc/VoucherBundle/Admin'
+let g:netrw_dirhist_9='/home/lyndon/Public/newsite.localhost/src/Lfc/VoucherBundle'
