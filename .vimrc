@@ -4,9 +4,12 @@
 "ln -s home-dir-settings/.vimrc .vimrc
 set nu ai si
 set expandtab
+set smarttab ignorecase smartcase
 set hidden
-set tabstop=2
-set shiftwidth=2
+set hlsearch incsearch
+set tabstop=4
+set shiftwidth=4
+
 filetype plugin on
 
 nnoremap ;gd :!git diff %<cr>
