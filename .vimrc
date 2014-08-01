@@ -7,10 +7,13 @@ set expandtab
 set smarttab ignorecase smartcase
 set hidden
 set hlsearch incsearch
-set tabstop=4
+set tabstop=2
 set shiftwidth=4
 
+syntax on
+
 filetype plugin on
+filetype plugin indent on
 
 nnoremap ;gd :!git diff %<cr>
 nnoremap ;ga :!git add %<cr>
@@ -50,9 +53,15 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 " :highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+autocmd bufWritePost .vimrc source $MYVIMRC
+autocmd bufWritePost *.vim source $MYVIMRC
+
+autocmd BufWritePost *.php !phpcs --standard="lfc-phpcs.xml" %
+autocmd BufWritePost *.php !php -l %
 "let c = 1
 "while c <= 40
 "  nnoremap ;c :bc<cr>
 "endwhile
 
 execute pathogen#infect()
+
