@@ -53,11 +53,37 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 " :highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+fu! PhpSyntaxCheck()
+    let cmd="php -l "
+    let cmd.=expand('%')
+    let res=system(cmd)
+    if v:shell_error
+        echoerr "PHP syntax check failed"
+        echon "\n\n\n"
+        echon res
+        echon "\n\n\n"
+    else
+        :call PhpStyleCheck()
+    endif
+
+endfu
+
+fu! PhpStyleCheck()
+    let cmd='phpcs --standard="lfc-phpcs.xml" '
+    let cmd.=expand('%')
+    let res=system(cmd)
+    if v:shell_error
+        echoerr "PHP style check failed"
+        echon "\n\n\n"
+        echon res
+        echon "\n\n\n"
+    endif
+endfu
+
 autocmd bufWritePost .vimrc source $MYVIMRC
 autocmd bufWritePost *.vim source $MYVIMRC
 
-autocmd BufWritePost *.php !phpcs --standard="lfc-phpcs.xml" %
-autocmd BufWritePost *.php !php -l %
+autocmd BufWritePost *.php :call PhpSyntaxCheck()
 "let c = 1
 "while c <= 40
 "  nnoremap ;c :bc<cr>
