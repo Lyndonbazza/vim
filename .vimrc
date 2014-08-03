@@ -80,6 +80,8 @@ fu! PhpStyleCheck()
     endif
 endfu
 
+so ~/.vim/functions/phpfunctioncomments.vim
+
 autocmd bufWritePost .vimrc source $MYVIMRC
 autocmd bufWritePost *.vim source $MYVIMRC
 
