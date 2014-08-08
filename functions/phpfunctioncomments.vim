@@ -3,9 +3,9 @@ fu! Xx()
     let arguments=split(line, '(')
     let functionName=split(arguments[0],' ')
     let arguments=split(arguments[1],')')
-    let commentStr=join(readfile('/home/lyndon/.vim/snippets/functionComments.vim'), "\n")
+    let commentStr=join(readfile(glob('~/.vim/snippets/functionComments.vim')), "\n")
     let funName=functionName[ len(functionName) - 1 ]
-    let commentLine=join(readfile('/home/lyndon/.vim/snippets/functionCommentLine.vim'), "")
+    let commentLine=join(readfile(glob('~/.vim/snippets/functionCommentLine.vim')), "")
 
     let funcArgs=''
 
@@ -47,6 +47,7 @@ fu! Xx()
     let funcDesc=" ".input('Enter Function Description: ')
 
     let @c=printf(commentStr, funName, funcDesc, funcArgs)
+    echo c
     put! c
     =?\/\*\*
 endfu
